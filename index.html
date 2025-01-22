@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monster Music Mods</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="header">
+        <h1>Monster Music Mods</h1>
+        <p>Swipe or scroll to choose your game:</p>
+    </div>
+
+    <div class="games-container">
+        <!-- Game 1: Horror Music Mod (Black/White) -->
+        <div class="game-card" data-theme="horror-black-white">
+            <img src="icons/game1-icon.png" class="game-icon" alt="Horror Mod">
+            <h3>Horror Music Mod</h3>
+            <button class="play-btn" data-game="game1" style="background: #ff0000;">PLAY</button>
+        </div>
+
+        <!-- Game 2: Spunky Mod (Orange/Green) -->
+        <div class="game-card" data-theme="spunky-orange-green">
+            <img src="icons/game2-icon.png" class="game-icon" alt="Spunky Mod">
+            <h3>Spunky Mod</h3>
+            <button class="play-btn" data-game="game2" style="background: #00a8ff;">PLAY</button>
+        </div>
+
+        <!-- Game 3: Mix Beats (Blue) -->
+        <div class="game-card" data-theme="mix-beats-blue">
+            <img src="icons/game3-icon.png" class="game-icon" alt="Mix Beats">
+            <h3>Mix Beats</h3>
+            <button class="play-btn" data-game="game3" style="background: #ffd700;">PLAY</button>
+        </div>
+
+        <!-- Game 4: Horror Music Mod (Red/Black) -->
+        <div class="game-card" data-theme="horror-red-black">
+            <img src="icons/game4-icon.png" class="game-icon" alt="Horror Red">
+            <h3>Horror Music Mod</h3>
+            <button class="play-btn" data-game="game4" style="background: #7fff00;">PLAY</button>
+        </div>
+
+        <!-- Game 5: Sprunky Mod (Blue Monster) -->
+        <div class="game-card" data-theme="sprunky-blue">
+            <img src="icons/game5-icon.png" class="game-icon" alt="Sprunky Mod">
+            <h3>Sprunky Mod</h3>
+            <button class="play-btn" data-game="game5" style="background: #ffa500;">PLAY</button>
+        </div>
+    </div>
+
+    <script>
+        // Redirect to selected game
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const gameFolder = button.getAttribute('data-game');
+                window.location.href = `${gameFolder}/index.html`;
+            });
+        });
+    </script>
+</body>
+</html>
