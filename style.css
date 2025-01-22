@@ -1,0 +1,85 @@
+body {
+    background: #0a0a0a; /* Default dark background */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow-x: auto; /* Enable horizontal scroll on small screens */
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.games-container {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    overflow-x: auto; /* Horizontal scroll for mobile */
+    min-height: 80vh;
+    align-items: center;
+}
+
+/* Game Cards */
+.game-card {
+    flex: 0 0 280px; /* Fixed width for horizontal layout */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s;
+}
+
+/* Theme-Specific Overrides */
+.game-card[data-theme="horror-black-white"] {
+    background: linear-gradient(45deg, #000000, #2a2a2a);
+    border: 1px solid #ffffff30;
+}
+.game-card[data-theme="spunky-orange-green"] {
+    background: linear-gradient(45deg, #ff6b00, #00ff88);
+}
+.game-card[data-theme="mix-beats-blue"] {
+    background: linear-gradient(45deg, #0066ff, #00ccff);
+}
+.game-card[data-theme="horror-red-black"] {
+    background: linear-gradient(45deg, #ff0000, #3a0000);
+}
+.game-card[data-theme="sprunky-blue"] {
+    background: linear-gradient(45deg, #0044ff, #00ffcc);
+}
+
+.game-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px; /* Less round for "mod" aesthetic */
+    margin-bottom: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.play-btn {
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: filter 0.3s;
+}
+
+.play-btn:hover {
+    filter: brightness(1.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .games-container {
+        padding: 10px;
+    }
+    .game-card {
+        flex: 0 0 250px;
+    }
+}
